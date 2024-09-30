@@ -41,29 +41,24 @@ bool check_win(int **R, int **C)
 {
     for (int i = 0; i < ROWS; i++)
     {
-        // printf("FIRST COUNT ROW[%d] : %d\n", i + 1, R[0][i]);
         if (R[0][i] == COLUMNS)
             return true;
     }
     for (int i = 0; i < COLUMNS; i++)
     {
-        // printf(" FIRST COUNT COL[%d] : %d\n", i + 1, C[0][i]);
         if (C[0][i] == ROWS)
             return true;
     }
     for (int i = 0; i < ROWS; i++)
     {
-        // printf("SECOND COUNT ROW[%d] : %d\n", i + 1, R[1][i]);
         if (R[1][i] == COLUMNS)
             return true;
     }
     for (int i = 0; i < COLUMNS; i++)
     {
-        // printf("SECOND COUNT COL[%d] : %d\n", i + 1, C[1][i]);
         if (C[1][i] == ROWS)
             return true;
     }
-    // printf("********************************\n");
     return false;
 }
 bool diagonal_check(char **R)
@@ -79,7 +74,6 @@ bool diagonal_check(char **R)
     }
     for (int i = 1; i < ROWS; i++)
     {
-     //   printf("%c %c\n",R[i - 1][COLUMNS - i] , R[i][COLUMNS - 1 - i]);
         if ((R[i - 1][COLUMNS - i] != R[i][COLUMNS - 1 - i]) || (R[i - 1][COLUMNS - i] == ' '))
         {
             printf("TRUE\n");
@@ -87,6 +81,5 @@ bool diagonal_check(char **R)
             break;
         }
     }
-   // printf("%d %d\n",flag_right , flag_left);
     return (bool)(flag_right | flag_left);
 }
